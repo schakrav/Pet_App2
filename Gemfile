@@ -5,6 +5,7 @@ gem 'rails', '3.2.8'
 gem 'jquery-rails'
 gem 'execjs'
 gem 'therubyracer'
+gem 'bootstrap-sass', '2.0.4'
 # for deployment on Heroku
 
 group :development, :test do
