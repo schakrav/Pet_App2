@@ -41,33 +41,32 @@ describe Owner do
 		it {should_not allow_value("netherlands").for(:country)}
 	end	
 
-
   	describe "Use factories for setup" do
 	
 		before (:each) do
-			@joey = FactoryGirl.create(:owner)
-			@ryn = FactoryGirl.create(:owner, :firstname => "Ryn", :active => false)
-			@gianna =  FactoryGirl.create(:owner, :firstname => "Gianna", :phone => "+873-9788-9732")
+			@srinjoy = FactoryGirl.create(:owner)
+			@rishika = FactoryGirl.create(:owner, :firstname => "Rishika", :active => false)
+			@smita =  FactoryGirl.create(:owner, :firstname => "Smita", :phone => "+974-6617-7820")
 		end
 
 		it "creates valid objects" do
-			@joey.should be_valid	
-			@ryn.should be_valid
-			@gianna.should be_valid
+			@srinjoy.should be_valid	
+			@rishika.should be_valid
+			@smita.should be_valid
 		end
 
 		it "has the right attribute information" do
-			@joey.firstname.should == "Joey"
-			@ryn.firstname.should == "Ryn"
-			@gianna.firstname.should == "Gianna"
+			@srinjoy.firstname.should == "Srinjoy"
+			@rishika.firstname.should == "Rishika"
+			@smita.firstname.should == "Smita"
 		end
 
 		it "returns all the records in alphabetical order" do
-			Owner.alphabetical.map{|o| o.firstname}.should == ["Gianna", "Joey", "Ryn"]
+			Owner.alphabetical.map{|o| o.firstname}.should == ["Rishika", "Smita", "Srinjoy"]
 		end
 
 		it "returns all the active records" do
-			Owner.active.alphabetical.map{|o| o.firstname}.should == ["Gianna", "Joey"]
+			Owner.active.alphabetical.map{|o| o.firstname}.should == ["Smita", "Srinjoy"]
 		end
 
 		it "returns the right number of active records" do
@@ -75,15 +74,15 @@ describe Owner do
 		end
 
 		it "returns the proper name correctly" do
-			@joey.proper_name.should == "Joey Phelps"
+			@srinjoy.proper_name.should == "Srinjoy Chakravarty"
 		end
 
 		it "returns the name correctly" do
-			@joey.name.should == "Phelps, Joey"
+			@srinjoy.name.should == "Chakravarty, Srinjoy"
 		end
 
 		it "should strip everything but numbers for the phone" do
-			@gianna.phone.should == "87397889732"
+			@smita.phone.should == "97466177820"
 		end
 	end
 end
