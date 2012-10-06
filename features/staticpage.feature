@@ -46,17 +46,17 @@ Feature: Standard Business
 			Given I am on the home page
 			Then "Webmaster: Srinjoy Chakravarty" should be part of the "footer"
 
-		Scenario: View About Us information in footer
+		Scenario: View About Us information in header
 			Given I am on the home page
-			Then "About Us" should be part of the "footer"
+			Then "About Us" should be part of the "header"
 
-		Scenario: View Contact Us information in footer
+		Scenario: View Contact Us information in header
 			Given I am on the home page
-			Then "Contact Us" should be part of the "footer"
+			Then "Contact Us" should be part of the "header"
 
-		Scenario: View Privacy Policy information in footer
+		Scenario: View Privacy Policy information in header
 			Given I am on the home page
-			Then "Privacy Policy" should be part of the "footer"			
+			Then "Privacy Policy" should be part of the "header"			
 
 
 		
