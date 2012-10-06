@@ -8,33 +8,32 @@
 	</head>
 	<body>
 		<header class="navbar navbar-fixed-top">
-      		<div class="navbar-inner">
-        		<div class="container">
-        			<%= link_to "Bleed Blue", '#', id: "logo" %>
-         			 <nav>
-            			<ul class="nav pull-right">
-              				<li><%= link_to "Home",    root_path %></li>
-                      <li><%= link_to "About",   about_path %></li>
-                      <li><%= link_to "Contact", contact_path %></li>
-                      <li><%= link_to "Privacy", privacy_path %></li>
-            			</ul>
-          			</nav>
-        		</div>
-      		</div>
-      	</header>	
-      	<div class="container">
+      <div class="navbar-inner">
+        <div class="container">
+        <%= link_to "Bleed Blue", '#', id: "logo" %>
+          <nav>
+            <ul class="nav pull-right">
+              <li><%= link_to "Home",    root_path %></li>
+              <li><%= link_to "About",   about_path %></li>
+              <li><%= link_to "Contact", contact_path %></li>
+              <li><%= link_to "Privacy", privacy_path %></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>	
+    <div class="container">
 		<%= yield %>
-    <footer class="footer">
-      <small>
-        <a href="http://qats.herokuapp.com">QATS Pet Application</a>
-      </small>
-       <nav>
-        <ul>
-         
+      <footer class="footer">
+        <small>
+          <a href="http://qats.herokuapp.com">QATS Pet Application</a>
+        </small>
+        <nav>
+          <ul>
             <li><a href="https://twitter.com/Srinjoy_Chakrav"> Webmaster: Srinjoy Chakravarty   © 2012</a></li>
-        </ul>
-      </nav>
-    </footer>
+          </ul>
+        </nav>
+      </footer>
 		</div>
 	</body>
 </html>
