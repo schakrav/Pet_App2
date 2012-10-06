@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :country %><br />
-    <%= f.text_field :country %>
+    <%= f.select(:country, Owner::COUNTRY_LIST) %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
