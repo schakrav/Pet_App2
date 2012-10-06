@@ -6,5 +6,5 @@ PetApp::Application.routes.draw do
   match '/about', :to => 'pages#about'
   match '/contact', :to => 'pages#contact'
   match '/privacy', :to => 'pages#privacy'
-  
+  match '/signup', :to => 'owners#new'
 end

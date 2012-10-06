@@ -10,13 +10,13 @@
 		<header class="navbar navbar-fixed-top">
       		<div class="navbar-inner">
         		<div class="container">
-        			<%= link_to "sample app", '#', id: "logo" %>
+        			<%= link_to "Bleed Blue", '#', id: "logo" %>
          			 <nav>
             			<ul class="nav pull-right">
-              				<li><%= link_to "Home",    '#' %></li>
-              				<li><%= link_to "About",   '#' %></li>
-              				<li><%= link_to "Contact", '#' %></li>
-              				<li><%= link_to "Privacy", '#' %></li>
+              				<li><%= link_to "Home",    'root_path' %></li>
+                      <li><%= link_to "About",   'about_path' %></li>
+                      <li><%= link_to "Contact", 'contact_path' %></li>
+                      <li><%= link_to "Privacy", 'privacy_path' %></li>
             			</ul>
           			</nav>
         		</div>
@@ -24,6 +24,27 @@
       	</header>	
       	<div class="container">
 		<%= yield %>
+    <footer class="footer">
+      <small>
+        <a href="qats.herokuapp.com">QATS Pet Application</a>
+        by Srinjoy Chakravarty
+      </small>
+       <nav>
+        <ul>
+         
+            <li><a href="https://twitter.com/Srinjoy_Chakrav"> Webmaster: Dan Phelps   © 2012</a></li>
+        </ul>
+      </nav>
+    </footer>
 		</div>
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
