@@ -16,13 +16,14 @@ I want to record owner information
 	And I check the "Active" box
 	And I click the "Create Owner" button
 	Then I should get to see "Created new owner Srinjoy Chakravarty!"
-	And I should get to see "Firstname:"
+	And I should get to see "Name:"
 	And I should get to see "Srinjoy Chakravarty"
 	And I should get to see "Address:"
 	And I should get to see "The Pearl Qatar"
+	And I should get to see "Location:"
 	And I should get to see "Doha, QA"
-	And I should get to see "Phone:"
-	And I should get to see "66090897"
 	And I should get to see "Email:"
 	And I should get to see "chaxz93@gmail.com"
+	And I should get to see "Phone:"
+	And I should get to see "66090897"
 	And I should get to see "Active with QATS: true" 
