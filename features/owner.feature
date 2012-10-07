@@ -16,7 +16,7 @@ I want to record owner information
 	And I check the "Active" box
 	And I click the "Create Owner" button
 	Then I should get to see "Created new owner Srinjoy Chakravarty!"
-	And I should get to see "firstname:"
+	And I should get to see "Firstname:"
 	And I should get to see "Srinjoy Chakravarty"
 	And I should get to see "Address:"
 	And I should get to see "The Pearl Qatar"

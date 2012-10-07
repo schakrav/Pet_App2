@@ -1,6 +1,3 @@
-
-require 'spec_helper'
-
 FactoryGirl.define do
 	factory :owner do
 		firstname "Srinjoy"
