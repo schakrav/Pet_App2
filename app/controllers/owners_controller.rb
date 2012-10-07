@@ -44,7 +44,8 @@ class OwnersController < ApplicationController
 
     respond_to do |format|
       if @owner.save
-        format.html { redirect_to @owner, notice: "Created new owner #{@owner.firstname} #{@owner.lastname}!" }
+        #format.html { redirect_to @owner, notice: "Created new owner #{@owner.firstname} #{@owner.lastname}!" }
+        format.html { redirect_to @owner, notice: "Created new owner #{@owner.proper_name}!" }
         format.json { render json: @owner, status: :created, location: @owner }
       else
         format.html { render action: "new" }

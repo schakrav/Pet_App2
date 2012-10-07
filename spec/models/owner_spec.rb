@@ -58,7 +58,7 @@ describe Owner do
 		it "has the right attribute information" do
 			@srinjoy.firstname.should == "Srinjoy"
 			@rishika.firstname.should == "Rishika"
-			@smita.firstname.should == "Smita"
+			@smita.phone.should == "+97466177820"
 		end
 
 		it "returns all the records in alphabetical order" do
