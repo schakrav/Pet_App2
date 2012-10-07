@@ -23,7 +23,7 @@ describe "owners/edit" do
       assert_select "input#owner_lastname", :name => "owner[lastname]"
       assert_select "input#owner_address", :name => "owner[address]"
       assert_select "input#owner_city", :name => "owner[city]"
-      assert_select "input#owner_country", :name => "owner[country]"
+      assert_select "select#owner_country", :name => "owner[country]"
       assert_select "input#owner_email", :name => "owner[email]"
       assert_select "input#owner_phone", :name => "owner[phone]"
       assert_select "input#owner_active", :name => "owner[active]"

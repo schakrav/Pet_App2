@@ -24,7 +24,7 @@ describe OwnersController do
   # Owner. As you add validations to Owner, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {:firstname => "Srinjoy", :lastname => "Smith", :email => "srinjoy@srinjoy.com", :phone => "97444540123", :city => "Doha", :country => "QA"}
   end
 
   # This should return the minimal set of values that should be in the session

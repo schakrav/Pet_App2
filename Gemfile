@@ -19,7 +19,7 @@ group :production do
 end
 
 group :test do
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'database_cleaner'
