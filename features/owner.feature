@@ -4,7 +4,15 @@ In order to bill my clients
 As a vet
 I want to record owner information
 
-	Scenario: title
+
+
+
+	  Scenario: Follow destroy link
+    Given I am on the 'owners' page
+    When I follow the "Destroy" link for "chaxz93@gmail.com "
+    Then I should not find "Srinjoy"
+
+Scenario: title
 	Given I am on the 'New Owner' page
 	When I enter "Srinjoy" for "Firstname"
 	And I enter "Chakravarty" for "Lastname"

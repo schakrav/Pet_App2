@@ -10,7 +10,7 @@ class Owner < ActiveRecord::Base
   
   validates_inclusion_of :country, :in => %[QA KSA UAE], :message => "is not an option", :allow_nil => true, :allow_blank => true
 	
-  COUNTRY_LIST = [['Qatar', 'QA'], ['Saudia Arabia', 'KSA'], ['United Arab Emirates', 'UAE']]
+  COUNTRY_LIST = [['Qatar', 'QA'], ['Saudi Arabia', 'KSA'], ['United Arab Emirates', 'UAE']]
  
   scope :alphabetical, order('lastname, firstname')
   scope :active, where('active = ?', true)
