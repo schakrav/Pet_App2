@@ -42,4 +42,16 @@ Then /^"(.*?)" should be part of the "(.*?)"$/ do |txt, tag|
     page.should have_selector(tag, :text => txt)
 end
 
+Then /^I should see a button named "(.*?)"$/ do |button|
+ page.has_button?(button)
+end
+
+
+
+
+
+
+
+
+
 
