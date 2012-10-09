@@ -46,6 +46,25 @@ Then /^I should see a button named "(.*?)"$/ do |button|
  page.has_button?(button)
 end
 
+When /^I click on the button named "(.*?)"$/ do |click_button|
+  click_on(click_button)
+end
+
+Then /^I should navigate to the "(.*?)" page$/ do |target_page|
+  page.should have_content target_page
+end
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

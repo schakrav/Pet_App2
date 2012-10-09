@@ -10,9 +10,12 @@ Feature: Standard Business
 			And I should see "This is the home page for the online pet application"
 			And I should see a button named "Sign up now!"
 			And I should see a button named "Sign in"
-		
-
-
+			
+		Scenario: Functionality of Sign-up button
+			Given I am on the home page
+			When I click on the button named "Sign up now!"
+			Then I should navigate to the "Sign up" page
+					
 		Scenario: Aboutpage
 			When I go to the about page
 			Then I should see "About Us"
