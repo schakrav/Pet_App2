@@ -1,14 +1,11 @@
+<% provide(:title, 'Owners') %>
 <h1>Listing owners</h1>
 
 <table>
   <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Address</th>
-    <th>City</th>
+    <th>Owner</th>
     <th>Country</th>
     <th>Email</th>
-    <th>Phone</th>
     <th>Active</th>
     <th></th>
     <th></th>
@@ -17,13 +14,9 @@
 
 <% @owners.each do |owner| %>
   <tr>
-    <td><%= owner.firstname %></td>
-    <td><%= owner.lastname %></td>
-    <td><%= owner.address %></td>
-    <td><%= owner.city %></td>
+    <td><%= owner.proper_name %></td>
     <td><%= owner.country %></td>
     <td><%= owner.email %></td>
-    <td><%= owner.phone %></td>
     <td><%= owner.active %></td>
     <td><%= link_to 'Show', owner %></td>
     <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
@@ -34,4 +27,4 @@
 
 <br />
 
-<%= link_to 'New Owner', new_owner_path %>
+<%= link_to 'Add New Owner', new_owner_path %>

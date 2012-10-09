@@ -16,14 +16,18 @@ I want to be able to list, create, update, and delete pet owner information
 	Scenario: List Owner
 	
 		Given I am on the 'owners' page
-		Then in the "title", I should see "QATS Pet App| Owners"
+		Then in the "title", I should see "Pet App| Owners"
 		And in the "th", I should see "Owner"
-		And in the "th", I should see "Phone"
+		And in the "th", I should see "Country"
 		And in the "th", I should see "Email"
-		And in the "td", I should see "Phelps, Joey"
-		And in the "td", I should see "Phelps, Ryn"
-		And in the "td", I should see "97444548624"
-		And in the "td", I should see "joey@joeyphelps.com"
+		And in the "th", I should see "Active"
+		And in the "td", I should see "Srinjoy Chakravarty"
+		And in the "td", I should see "QA"
+		And in the "td", I should see "chaxz93@gmail.com"
+		And in the "td", I should see "true"
+		And in the "td", I should see "Show"
+		And in the "td", I should see "Edit"
+		And in the "td", I should see "Destroy"
 		And in the "body", I should see a link to "Add a New Owner"
 
 	Scenario: Create Owner
@@ -56,6 +60,7 @@ I want to be able to list, create, update, and delete pet owner information
 		Given I am on the 'owners' page
 		When I follow the "Edit" link for "Phelps, Joey"
 		And I change the email address "joey" 
+		Then I should see 
 
 	Scenario: Update Owner
 		
