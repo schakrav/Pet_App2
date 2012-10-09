@@ -58,11 +58,10 @@ describe Owner do
 		it "has the right attribute information" do
 			@srinjoy.firstname.should == "Srinjoy"
 			@rishika.firstname.should == "Rishika"
-<<<<<<< HEAD
+
 			@smita.firstname.should == "Smita"
-=======
-			@smita.phone.should == "+97466177820"
->>>>>>> 4fc34a56464c60eb2bf6ae1852c52dee89e7074d
+
+			@smita.phone.should == "97466177820"
 		end
 
 		it "returns all the records in alphabetical order" do
