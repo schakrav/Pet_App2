@@ -1,18 +1,32 @@
 Feature: Owner Information
 
-In order to bill my clients
+In order to track my clients
 As a vet
-I want to record owner information
+I want to be able to list, create, update, and delete pet owner information
 
-
-
-
-	  Scenario: Follow destroy link
+Background:
+	Given an initial business
+	
+	Scenario: Follow destroy link
+   
     Given I am on the 'owners' page
     When I follow the "Destroy" link for "chaxz93@gmail.com "
     Then I should not find "Srinjoy"
 
-Scenario: title
+Scenario: List Owner
+Given I am on the 'owners' page
+Then in the "title", I should see "QATS Pet App| Owners"
+And in the "th", I should see "Owner"
+And in the "th", I should see "Phone"
+And in the "th", I should see "Email"
+And in the "td", I should see "Phelps, Joey"
+And in the "td", I should see "Phelps, Ryn"
+And in the "td", I should see "97444548624"
+And in the "td", I should see "joey@joeyphelps.com"
+And in the "body", I should see a link to "Add a New Owner"
+
+	Scenario: Create Owner
+
 	Given I am on the 'New Owner' page
 	When I enter "Srinjoy" for "Firstname"
 	And I enter "Chakravarty" for "Lastname"
@@ -35,3 +49,8 @@ Scenario: title
 	And I should get to see "Phone:"
 	And I should get to see "66090897"
 	And I should get to see "Active with QATS: true" 
+
+	Scenario: Update Owner
+		Given I am on the 'owners' page
+		When I follow the "Edit" link for "Phelps, Joey"
+		And I change the email address "joey" 

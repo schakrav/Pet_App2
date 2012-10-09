@@ -7,6 +7,7 @@ Feature: Standard Business
 		Scenario: Homepage
 			When I go to the application root
 			Then I should see "Welcome to my application!"
+
 			And I should see "This is the home page for the online pet application"
 			And I should see a button named "Sign up now!"
 			And I should see a button named "Sign in"
@@ -16,6 +17,7 @@ Feature: Standard Business
 			When I click on the button named "Sign up now!"
 			Then I should navigate to the "Sign up" page
 					
+
 		Scenario: Aboutpage
 			When I go to the about page
 			Then I should see "About Us"
