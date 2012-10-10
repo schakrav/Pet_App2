@@ -4,8 +4,7 @@ In order to track my clients
 As a vet
 I want to be able to list, create, update, and delete pet owner information
 
-	Background:
-		Given an initial business
+
 	
 	Scenario: Follow destroy link
    
@@ -16,7 +15,7 @@ I want to be able to list, create, update, and delete pet owner information
 	Scenario: List Owner
 	
 		Given I am on the 'owners' page
-		Then in the "title", I should see "Pet App| Owners"
+		Then for the "title", I should see "Pet App| Owners"
 		And in the "th", I should see "Owner"
 		And in the "th", I should see "Country"
 		And in the "th", I should see "Email"
