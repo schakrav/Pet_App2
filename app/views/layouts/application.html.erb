@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-	<head>
-  	<title><%= full_title(yield(:title)) %></title>
-  	<%= stylesheet_link_tag    "application", media: "all" %>
-  	<%= javascript_include_tag "application" %>
-  	<%= csrf_meta_tags %>
-	</head>
-	<body>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
     <header class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <%= link_to "Online Pet Application", home_path, id: "logo" %>
+          <%= link_to(image_tag("fb.png"),"https://www.facebook.com/schaxz") %>
+          <%= link_to(image_tag("tw.png"),"https://twitter.com/Srinjoy_Chakrav") %>
           <nav>
             <ul class="nav pull-right">
               <li><%= link_to "Home",    root_path %></li>
@@ -21,9 +23,13 @@
           </nav>
         </div>
       </div>
-    </header>	
+    </header> 
+    <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
     <div class="container">
-		  <%= yield %>
+      <%= link_to(image_tag("tji.jpg"),"http://wix.com/schakrav/bliss") %>
+      <%= yield %>
       <footer class="footer">
         <small>
           <a href="http://qats.herokuapp.com">QATS Pet Application</a>
@@ -36,15 +42,6 @@
               <%= link_to(image_tag("dog.png"),home_path) %>
         </nav>
       </footer>
-	  </div>
+    </div>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
