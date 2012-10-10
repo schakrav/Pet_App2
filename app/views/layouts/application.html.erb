@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-  		<title><%= full_title(yield(:title)) %></title>
-  		<%= stylesheet_link_tag    "application", media: "all" %>
-  		<%= javascript_include_tag "application" %>
-  		<%= csrf_meta_tags %>
+  	<title><%= full_title(yield(:title)) %></title>
+  	<%= stylesheet_link_tag    "application", media: "all" %>
+  	<%= javascript_include_tag "application" %>
+  	<%= csrf_meta_tags %>
 	</head>
 	<body>
-		<header class="navbar navbar-fixed-top">
+    <header class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-        <%= link_to "Bleed Blue", '#', id: "logo" %>
+          <%= link_to "Online Pet Application", home_path, id: "logo" %>
           <nav>
             <ul class="nav pull-right">
               <li><%= link_to "Home",    root_path %></li>
@@ -23,19 +23,21 @@
       </div>
     </header>	
     <div class="container">
-		<%= yield %>
+		  <%= yield %>
       <footer class="footer">
         <small>
           <a href="http://qats.herokuapp.com">QATS Pet Application</a>
         </small>
         <nav>
           <ul>
-            <li><a href="https://twitter.com/Srinjoy_Chakrav"> Webmaster: Srinjoy Chakravarty   © 2012</a></li>
+             <li><a href="https://twitter.com/Srinjoy_Chakrav"> Webmaster: Srinjoy Chakravarty   © 2012</a>
+             </li>
           </ul>
+              <%= link_to(image_tag("dog.png"),home_path) %>
         </nav>
       </footer>
-		</div>
-	</body>
+	  </div>
+  </body>
 </html>
 
 
