@@ -9,7 +9,6 @@ Feature: Owner information
 				Scenario: List Owner
 					Given I am on the 'owners' page
 					Then for the "title", I should see "Pet App | Owners Listing"
-					And for the "body", I should see "Listing owners"
 					And for the "th", I should see "Owner"
 					And for the "th", I should see "Country"
 					And for the "th", I should see "Email"
@@ -18,6 +17,7 @@ Feature: Owner information
 					And for the "td", I should see "QA"
 					And for the "td", I should see "chaxz93@gmail.com"
 					And for the "td", I should see "true"
+					And for the "body", I should see "Member List of Pet-Owners"
 					And for the "body", I should see a link to "Add New Owner"
 	
 				Scenario: Follow destroy link

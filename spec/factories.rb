@@ -5,7 +5,7 @@ FactoryGirl.define do
 		address "704-B The Pearl Qatar"
 		city "Doha"
 		country "QA"
-		email "chaxz@cmu.edu"
+		email "chaxz93@gmail.com"
 		phone "97444724223"
 		active true
 	end	
