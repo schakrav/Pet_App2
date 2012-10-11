@@ -2,6 +2,7 @@ class OwnersController < ApplicationController
   # GET /owners
   # GET /owners.json
   def index
+    @title = "Owners Listing"
     @owners = Owner.all
 
     respond_to do |format|
@@ -13,6 +14,7 @@ class OwnersController < ApplicationController
   # GET /owners/1
   # GET /owners/1.json
   def show
+    @title = "Owner Created"
     @owner = Owner.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +26,7 @@ class OwnersController < ApplicationController
   # GET /owners/new
   # GET /owners/new.json
   def new
+    @title = "Sign up"
     @owner = Owner.new
 
     respond_to do |format|
@@ -34,6 +37,7 @@ class OwnersController < ApplicationController
 
   # GET /owners/1/edit
   def edit
+    @title = "Edit Owner"
     @owner = Owner.find(params[:id])
   end
 

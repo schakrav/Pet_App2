@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= full_title(yield(:title)) %></title>
+    <title><%= full_title %></title>
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -16,6 +16,7 @@
           <nav>
             <ul class="nav pull-right">
               <li><%= link_to "Home",    root_path %></li>
+
               <li><%= link_to "About Us",   about_path %></li>
               <li><%= link_to "Contact Us", contact_path %></li>
               <li><%= link_to "Privacy Policy", privacy_path %></li>
@@ -25,10 +26,9 @@
       </div>
     </header> 
     <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    
     <% end %>
     <div class="container">
-      <%= link_to(image_tag("tji.jpg"),"http://wix.com/schakrav/bliss") %>
       <%= yield %>
       <footer class="footer">
         <small>
@@ -36,6 +36,10 @@
         </small>
         <nav>
           <ul>
+             <li><%= link_to(image_tag("home.png"), root_path) %></li>
+             <li><%= link_to(image_tag("about.png"), root_path) %></li>
+             <li><%= link_to(image_tag("contact.png"), root_path) %></li>
+             <li><%= link_to(image_tag("privacy.png"), root_path) %></li>
              <li><a href="https://twitter.com/Srinjoy_Chakrav"> Webmaster: Srinjoy Chakravarty   © 2012</a>
              </li>
           </ul>
