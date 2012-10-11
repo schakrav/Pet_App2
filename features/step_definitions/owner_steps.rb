@@ -1,11 +1,5 @@
 Given /^an initial business$/ do
-  before(:each) do
-    @cat = FactoryGirl.create(:animal)
-    @dog = FactoryGirl.create(:animal, :name => "Dog")
-    @srinjoy = FactoryGirl.create(:owner)
-    @rishika = FactoryGirl.create(:owner, :firstname => "Rishika")
-    @zaz = FactoryGirl.create(:pet, :name => "Zaz", :animal => @dog, :owner => @srinjoy)"
-  end 
+  @srinjoy = FactoryGirl.create(:owner)
 end
 
 Given /^I am on the 'New Owner' page$/ do
@@ -41,7 +35,9 @@ Then /^for the "(.*?)", I should see "(.*?)"$/ do |csstag, textvalue|
 end
 
 Then /^for the "(.*?)", I should see a link to "(.*?)"$/ do |csstag, textvalue|
-  page.should have_css(csstag, :link => textvalue)
+  within csstag do
+    page.should have_link textvalue
+  end
 end
 
 When /^I follow the "(.*?)" link for "(.*?)"$/ do |crud_link, identifier|
