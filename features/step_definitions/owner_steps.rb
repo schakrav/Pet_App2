@@ -1,3 +1,13 @@
+Given /^an initial business$/ do
+  before(:each) do
+    @cat = FactoryGirl.create(:animal)
+    @dog = FactoryGirl.create(:animal, :name => "Dog")
+    @srinjoy = FactoryGirl.create(:owner)
+    @rishika = FactoryGirl.create(:owner, :firstname => "Rishika")
+    @zaz = FactoryGirl.create(:pet, :name => "Zaz", :animal => @dog, :owner => @srinjoy)"
+  end 
+end
+
 Given /^I am on the 'New Owner' page$/ do
   visit new_owner_path
 end
@@ -26,8 +36,12 @@ Given /^I am on the 'owners' page$/ do
   visit owners_path
 end
 
-Then /^for the "(.*?)", I should see "(.*?)"$/ do |title, text|
-   page.should have_css(title, :text => text)
+Then /^for the "(.*?)", I should see "(.*?)"$/ do |csstag, textvalue|
+  page.should have_css(csstag, :text => textvalue)
+end
+
+Then /^for the "(.*?)", I should see a link to "(.*?)"$/ do |csstag, textvalue|
+  page.should have_css(csstag, :link => textvalue)
 end
 
 When /^I follow the "(.*?)" link for "(.*?)"$/ do |crud_link, identifier|
@@ -52,14 +66,6 @@ end
 
 
 
-Then /^in the "(.*?)", I should see "(.*?)"$/ do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
-end
-
-Then /^in the "(.*?)", I should see a link to "(.*?)"$/ do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
-end
-
 When /^I change the email address "(.*?)"$/ do |arg1|
   pending # express the regexp above with the code you wish you had
 end
@@ -67,5 +73,7 @@ end
 Then /^I should see$/ do
   pending # express the regexp above with the code you wish you had
 end
+
+
 
 
