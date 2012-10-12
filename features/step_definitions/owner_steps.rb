@@ -1,5 +1,6 @@
 Given /^an initial business$/ do
   @srinjoy = FactoryGirl.create(:owner)
+  @rishika = FactoryGirl.create(:owner, :firstname => "Rishika", :lastname => "Xi", :address => "Bin Jaber", :city => "Kiev", :email => "rishikaachy@yahoo.com")
 end
 
 Given /^I am on the 'New Owner' page$/ do
