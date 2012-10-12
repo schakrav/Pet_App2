@@ -3,7 +3,7 @@ class Owner < ActiveRecord::Base
   attr_accessible :active, :address, :city, :country, :email, :firstname, :lastname, :phone
 
   before_save :format_phone
-
+  has_many :pets
   validates :firstname, :lastname, :email, :phone, :city, :country, :presence => true
   
   validates_format_of :email, :with => /^[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info|qa))$/i, :message => "is not a valid form for an email-address"

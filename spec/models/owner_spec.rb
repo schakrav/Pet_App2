@@ -2,6 +2,10 @@ require 'spec_helper'
 	
 describe Owner do
 
+	it "should have proper associations" do
+		should have_many(:pets)
+	end	
+	
 	describe "Validation Macros" do
 		it {should validate_presence_of(:firstname)}
 		it {should validate_presence_of(:lastname)}
