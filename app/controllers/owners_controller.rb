@@ -65,7 +65,7 @@ class OwnersController < ApplicationController
 
     respond_to do |format|
       if @owner.update_attributes(params[:owner])
-        format.html { redirect_to @owner, notice: 'Owner was successfully updated.' }
+        format.html { redirect_to @owner, notice: "#{@owner.proper_name} was successfully updated!" }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

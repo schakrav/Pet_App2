@@ -40,35 +40,25 @@ Then /^for the "(.*?)", I should see a link to "(.*?)"$/ do |csstag, textvalue|
   end
 end
 
-When /^I follow the "(.*?)" link for "(.*?)"$/ do |crud_link, identifier|
-   within(:css, 'Owner List') do
-    within(:css, 'tr', :text => identifier) do
-      find(:css, 'a', :text => crud_link).click 
-    end
-  end 
-end
-
-#When /^I follow the "(.*?)" link for "(.*?)"$/ do |crud_link, identifier|
-#   within_table('Owner List') do
-#    within('tr', :text => identifier) do
-#      find('a', :text => crud_link).click 
- #   end
- # end 
+#When /^I follow the "(.*?)" link for "(.*?)"$/ do |crud_link, cell_name|
+ # find(:xpath, "//tr[contains(.,'#{cell_name}')]").click_link crud_link
 #end
 
-Then /^I should not find "(.*?)"$/ do |identifier|
-    page.should_not have_content(identifier)
+When /^I follow the "(.*?)" link for "(.*?)"$/ do |crud_link, cell_value|
+  within_table('Owner List') do
+    within('tr', :text => cell_value) do
+      find('a', :text => crud_link).click
+    end
+  end    
+end
+
+When /^I change the email address to "(.*?)"$/ do |newmail|
+   fill_in "Email", :with => newmail
 end
 
 
 
-When /^I change the email address "(.*?)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
 
-Then /^I should see$/ do
-  pending # express the regexp above with the code you wish you had
-end
 
 
 

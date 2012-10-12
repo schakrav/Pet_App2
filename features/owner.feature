@@ -19,11 +19,6 @@ Feature: Owner information
 					And for the "td", I should see "true"
 					And for the "body", I should see "Member List of Pet-Owners"
 					And for the "body", I should see a link to "Add New Owner"
-	
-				Scenario: Follow destroy link
-   					Given I am on the 'owners' page
-    				When I follow the "Destroy" link for "chaxz93@gmail.com "
-    				Then I should not find "Srinjoy"
 
 				Scenario: Create Owner
 					Given I am on the 'New Owner' page
@@ -49,14 +44,16 @@ Feature: Owner information
 					And I should get to see "66090897"
 					And I should get to see "Active with QATS: true" 
 
-				Scenario: Edit Owner
-					Given I am on the 'owners' page
-					When I follow the "Edit" link for "Phelps, Joey"
-					And I change the email address "joey" 
-					Then I should see 
-
 				Scenario: Update Owner
 					Given I am on the 'owners' page
-					When I follow the "Edit" link for "Phelps, Joey"
-					And I change the email address "joey" 
+					When I follow the "Edit" link for "Srinjoy Chakravarty"
+					And I change the email address to "chaxz@cmu.edu"
+					And I click the "Update" button
+					Then I should see "Srinjoy Chakravarty was successfully updated!"
+
+				Scenario: Delete Owner
+   					Given I am on the 'owners' page
+    				When I follow the "Destroy" link for "Srinjoy Chakravarty"
+    				Then I should not see "Srinjoy Chakravarty"	
+
 
