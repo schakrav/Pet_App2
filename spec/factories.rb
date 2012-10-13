@@ -9,4 +9,18 @@ FactoryGirl.define do
 		phone "97444724223"
 		active true
 	end	
+
+	factory :animal do
+		name "German Shepherd"
+	end
+	
+	factory	:pet do
+		name "Zaz"
+		female true
+		#date_of_birth 5.years.ago
+		date_of_birth "Fri, 12 Oct 2007" 
+		active true
+		association :owner
+		association :animal
+	end
 end
