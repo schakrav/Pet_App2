@@ -31,10 +31,9 @@ describe Pet do
  			@rishika.active.should == true
  			@zaz.name.should == "Zaz"
  			@zaz.female.should == true
-			@zaz.date_of_birth.should == 5.years.ago
 			@zaz.active.should == true
- 		end	
- 	end		
+			@srinjoy.firstname.should == "Srinjoy"
+ 		end			
 
  	it "should have proper associations" do
 		should belong_to(:owner)
@@ -47,11 +46,13 @@ describe Pet do
 
 	it "should have correct associations" do
 		@srinjoy.pets[0].name.should == "Zaz"
+		@srinjoy.pets[1].name.should == "Toby"
 		@zaz.owner.firstname.should == "Srinjoy"
 	end
 
 	it "should allow an owner to have many pets" do
-		@srinjoy.pets.count.shoud == 2
+		@srinjoy.pets.count.should == 2
 	end	
+end
 end
 

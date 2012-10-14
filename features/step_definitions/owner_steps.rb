@@ -1,5 +1,4 @@
 Given /^an initial business$/ do
-  @srinjoy = FactoryGirl.create(:owner)
   @rishika = FactoryGirl.create(:owner, :firstname => "Rishika", :lastname => "Xi", :address => "Bin Jaber", :city => "Kiev", :email => "rishikaachy@yahoo.com")
 end
 

@@ -1,4 +1,8 @@
 PetApp::Application.routes.draw do
+  resources :vaccinations
+
+  resources :visits
+
   resources :animals
   resources :pets
   resources :owners

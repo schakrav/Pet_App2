@@ -13,9 +13,9 @@ Feature: Owner information
 					And for the "th", I should see "Country"
 					And for the "th", I should see "Email"
 					And for the "th", I should see "Active"
-					And for the "td", I should see "Srinjoy Chakravarty"
+					And for the "td", I should see "Rishika Xi"
 					And for the "td", I should see "QA"
-					And for the "td", I should see "chaxz93@gmail.com"
+					And for the "td", I should see "rishikaachy@yahoo.com"
 					And for the "td", I should see "true"
 					And for the "body", I should see "Member List of Pet-Owners"
 					And for the "body", I should see a link to "Add New Owner"
@@ -46,14 +46,14 @@ Feature: Owner information
 
 				Scenario: Update Owner
 					Given I am on the 'owners' page
-					When I follow the "Edit" link for "Srinjoy Chakravarty"
+					When I follow the "Edit" link for "Rishika Xi"
 					And I change the email address to "chaxz@cmu.edu"
 					And I click the "Update" button
-					Then I should see "Srinjoy Chakravarty was successfully updated!"
+					Then I should see "Rishika Xi was successfully updated!"
 
 				Scenario: Delete Owner
    					Given I am on the 'owners' page
-    				When I follow the "Destroy" link for "Srinjoy Chakravarty"
-    				Then I should not see "Srinjoy Chakravarty"	
+    				When I follow the "Destroy" link for "Rishika Xi"
+    				Then I should not see "Rishika Xi"	
 
 

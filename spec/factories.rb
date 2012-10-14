@@ -17,8 +17,7 @@ FactoryGirl.define do
 	factory	:pet do
 		name "Zaz"
 		female true
-		#date_of_birth 5.years.ago
-		date_of_birth "Fri, 12 Oct 2007" 
+		date_of_birth 5.years.ago
 		active true
 		association :owner
 		association :animal
