@@ -24,7 +24,7 @@ FactoryGirl.define do
 	end
 
 	factory :visit do
-		weight 34
+		weight 69
 		visit_date 3.days.ago
 		notes "OMG a visit"
 		association :pet

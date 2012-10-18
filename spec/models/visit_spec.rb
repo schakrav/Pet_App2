@@ -33,8 +33,13 @@ describe Visit do
  		@visit.should be_valid
  	end	
 
- 	it "should validate that weight is greater than 0" do
+ 	it "should validate that weight is greater than 0 (version 1)" do
  		@visit.weight = 0
  		@visit.should_not be_valid
+ 	end	
+
+ 	it "should validate that weight is greater than 0 (version 2)" do
+ 		@visit.weight = 37
+ 		@visit.should be_valid
  	end	
 end
