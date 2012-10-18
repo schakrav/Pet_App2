@@ -1,5 +1,20 @@
 require 'spec_helper'
 describe Pet do
+
+	it "should have proper associations" do
+		should belong_to(:owner)
+		should belong_to(:animal)
+		should have_many(:visits)
+	end
+
+	it "should have a name" do
+		should validate_presence_of(:name)
+	end	
+
+	it "should have proper validations" do
+
+	end
+
 	describe "Create our factories" do
 		before(:each) do
  			@german_shepherd = FactoryGirl.create(:animal)

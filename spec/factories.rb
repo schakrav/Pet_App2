@@ -22,4 +22,11 @@ FactoryGirl.define do
 		association :owner
 		association :animal
 	end
+
+	factory :visit do
+		weight 34
+		visit_date 3.days.ago
+		notes "OMG a visit"
+		association :pet
+	end	
 end
