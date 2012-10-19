@@ -1,11 +1,12 @@
 
 	<div class="center hero-unit">
-  		 <%= link_to(image_tag("tji.jpg"),"http://wix.com/schakrav/bliss") %>
+  		 <%= link_to(image_tag("pet.jpg"),"http://wix.com/schakrav/bliss") %>
   		<h1>Welcome to my application!</h1>
 		<h2> This is the home page for the online pet application.</h2>
  		<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-  		<%= link_to "Sign in", '#', class: "btn btn-large btn-primary" %>
+  		<%= link_to "Celebrity Users", owners_path, class: "btn btn-large btn-primary" %>
   		<%= link_to "Register your pet", new_pet_path, class: "btn btn-large btn-primary" %>
+  		<%= link_to "Furry Ball List", pets_path, class: "btn btn-large btn-primary" %>
 	</div>
 
 
