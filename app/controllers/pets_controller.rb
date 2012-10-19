@@ -25,6 +25,7 @@ class PetsController < ApplicationController
   # GET /pets/new
   # GET /pets/new.json
   def new
+    @title = "Pet_Signup"
     @pet = Pet.new
 
     respond_to do |format|

@@ -8,7 +8,7 @@ Feature: Owner information
 
 				Scenario: List Animals
 					Given that I am on the 'animals' page
-					Then for the "title", I should see "Pet App | Pet Listing"
+					Then for the "title", I should see "Pet App | Animal Listing"
 					And for the "th", I should see "Name"
 					And for the "th", I should see "Female"
 					And for the "th", I should see "Active"

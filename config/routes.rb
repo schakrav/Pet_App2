@@ -19,4 +19,6 @@ PetApp::Application.routes.draw do
   match '/owners', :to => 'owners#index'
   match '/pets/new', :to => 'pets#new' 
   match '/pets', :to => 'pets#index' 
+  match '/animals/new', :to => 'animals#new' 
+  match '/animals', :to => 'animals#index'
 end

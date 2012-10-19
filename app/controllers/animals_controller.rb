@@ -2,6 +2,7 @@ class AnimalsController < ApplicationController
   # GET /animals
   # GET /animals.json
   def index
+     @title = "Animal Listing"
     @animals = Animal.all
 
     respond_to do |format|
@@ -24,6 +25,7 @@ class AnimalsController < ApplicationController
   # GET /animals/new
   # GET /animals/new.json
   def new
+      @title = "Register Breed"
     @animal = Animal.new
 
     respond_to do |format|
