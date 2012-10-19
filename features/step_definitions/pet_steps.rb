@@ -10,11 +10,13 @@ When /^I change the Name to "(.*?)"$/ do |newname|
    fill_in "Name", :with => newname
 end
 
-When /^I desperately follow the "(.*?)" link for "(.*?)"$/ do |link, value|
+When /^I click the "(.*?)" link for "(.*?)"$/ do |link, value|
    within_table('Pet List') do
     within('tr', :text => value) do
       find('a', :text => link).click
     end
   end    
 end
+
+
 

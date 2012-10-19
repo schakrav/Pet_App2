@@ -34,12 +34,12 @@ Feature: Owner information
 					
 				Scenario: Update Pet
 					Given that I am on the 'pets' page
-					When I desperately follow the "Edit" link for "Zaz"
+					When I click the "Edit" link for "Zaz"
 					And I change the Name to "Rukhsar"
 					And I click the "Update Pet" button
 					Then I should see "Your Pet was successfully updated!"
 
 				Scenario: Delete Pet
-   					Given I am on the 'owners' page
-    				When I follow the "Destroy" link for "Rishika Xi"
-    				Then I should not see "Rishika Xi"	
+   					Given that I am on the 'pets' page
+    				When I click the "Destroy" link for "Zaz"
+    				Then I should not see "Zaz"	
