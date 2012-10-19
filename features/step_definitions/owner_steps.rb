@@ -2,6 +2,7 @@ Given /^an initial business$/ do
   @rishika = FactoryGirl.create(:owner, :firstname => "Rishika", :lastname => "Xi", :address => "Bin Jaber", :city => "Kiev", :email => "rishikaachy@yahoo.com")
   @german_shepherd = FactoryGirl.create(:animal)
   @zaz = FactoryGirl.create(:pet)
+  @pug = FactoryGirl.create(:animal, :name => "Pug")
 end
 
 Given /^I am on the 'New Owner' page$/ do
