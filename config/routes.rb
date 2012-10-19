@@ -17,7 +17,6 @@ PetApp::Application.routes.draw do
   match '/privacy', :to => 'pages#privacy'
   match '/signup', :to => 'owners#new'
   match '/owners', :to => 'owners#index'
-
-
-
+  match '/pets/new', :to => 'pets#new' 
+  match '/pets', :to => 'pets#index' 
 end

@@ -6,7 +6,7 @@ Feature: Owner information
 		Background:
 			Given an initial business
 
-				Scenario: List Owner
+				Scenario: List Owners
 					Given I am on the 'owners' page
 					Then for the "title", I should see "Pet App | Owners Listing"
 					And for the "th", I should see "Owner"

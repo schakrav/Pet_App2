@@ -2,6 +2,7 @@ class PetsController < ApplicationController
   # GET /pets
   # GET /pets.json
   def index
+    @title = "Pet Listing"
     @pets = Pet.all
 
     respond_to do |format|
@@ -44,7 +45,7 @@ class PetsController < ApplicationController
 
     respond_to do |format|
       if @pet.save
-        format.html { redirect_to @pet, notice: 'Pet was successfully created.' }
+        format.html { redirect_to @pet, notice: 'Your Pet was successfully created!' }
         format.json { render json: @pet, status: :created, location: @pet }
       else
         format.html { render action: "new" }
@@ -60,7 +61,7 @@ class PetsController < ApplicationController
 
     respond_to do |format|
       if @pet.update_attributes(params[:pet])
-        format.html { redirect_to @pet, notice: 'Pet was successfully updated.' }
+        format.html { redirect_to @pet, notice: 'Your Pet was successfully updated!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

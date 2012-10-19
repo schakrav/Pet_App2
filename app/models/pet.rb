@@ -15,3 +15,14 @@ scope :for_owner, lambda{|owner_id| where('owner_id = ?', owner_id)}
 scope :by_animal, lambda{|animal_id| where('animal_id = ?', animal_id)} 
 scope :born_before, lambda{|date_of_birth| where('date_of_birth < ?', date_of_birth)} 
 end
+
+ 
+
+  
+
+  
+
+  
+ 
+	
+  
