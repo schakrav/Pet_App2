@@ -9,6 +9,7 @@ class Visit < ActiveRecord::Base
   validates :weight, :numericality => {:greater_than => 0, :only_integer => true}
 
   scope :chronological, order('visit_date DESC')
-
+  scope :for_pet, lambda{|pet_id| where('pet_id = ?', pet_id)}
+  scope :latest, lambda{|number| limit(number).order('date DESC')}
 
 end

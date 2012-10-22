@@ -70,4 +70,15 @@ describe Visit do
 		ordered_dates = Visit.chronological.map {|e| e.visit_date}
 		ordered_dates.should == sample_dates
 	end	
+
+	it "should allow us to return the visits for a given pet" do
+		Visit.for_pet(@toby.id).size.should == 1
+		Visit.for_pet(@zaz.id).size.should == 2
+	end
+
+	it "should allow us to return the last 'x' visits" do
+		Visit.for_pet(@zaz.id).latest(3).size.should == 2 
+		Visit.for_pet(@zaz.id).latest(2).size.should == 2 
+		Visit.for_pet(@zaz.id).latest(1).size.should == 1 
+	end	
 end
