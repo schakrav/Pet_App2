@@ -3,8 +3,11 @@ require 'spec_helper'
 describe Visit do
 	before(:each) do
 		@owner = FactoryGirl.create(:owner)
-		@pet = FactoryGirl.create(:pet, :owner => @owner)
-		@visit = FactoryGirl.create(:visit, :pet => @pet)
+		@zaz = FactoryGirl.create(:pet, :owner => @owner)
+		@toby = FactoryGirl.create(:pet, :name => "Toby", :owner => @owner)
+		@visit1 = FactoryGirl.create(:visit, :pet => @zaz)
+		@visit2 = FactoryGirl.create(:visit, :pet => @zaz, :visit_date => 6.days.ago)
+		@visit3 = FactoryGirl.create(:visit, :pet => @toby, :visit_date => 4.years.ago)
 	end
 
 	it "should have proper associations" do
@@ -30,16 +33,41 @@ describe Visit do
  	end	
 
 	it "should create valid visit factory" do
- 		@visit.should be_valid
+ 		@visit1.should be_valid
+ 		@visit2.should be_valid
+ 		@visit3.should be_valid
  	end	
 
  	it "should validate that weight is greater than 0 (version 1)" do
- 		@visit.weight = 0
- 		@visit.should_not be_valid
+ 		@visit1.weight = 0
+ 		@visit1.should_not be_valid
  	end	
 
  	it "should validate that weight is greater than 0 (version 2)" do
- 		@visit.weight = 37
- 		@visit.should be_valid
- 	end	
+ 		@visit1.weight = 37
+ 		@visit1.should be_valid
+ 	end
+
+	it "should accept valid weights" do
+		should allow_value(1).for(:weight)
+		should allow_value(10).for(:weight)
+		should allow_value(50).for(:weight)
+		should allow_value(100).for(:weight)
+	end
+
+	it "should not accept invalid weights" do
+		should_not allow_value(0).for(:weight)
+		should_not allow_value(-23).for(:weight)
+		should_not allow_value(34.39).for(:weight)
+		should_not allow_value(-134.41).for(:weight)
+	end
+
+	it "should put all the visits in chronological order" do
+		sample_dates = Array.new
+		sample_dates << 3.days.ago.to_date
+		sample_dates << 6.days.ago.to_date
+		sample_dates << 4.years.ago.to_date
+		ordered_dates = Visit.chronological.map {|e| e.visit_date}
+		ordered_dates.should == sample_dates
+	end	
 end

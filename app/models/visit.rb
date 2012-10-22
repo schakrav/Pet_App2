@@ -7,4 +7,8 @@ class Visit < ActiveRecord::Base
 
   validates :pet_id, :weight, :visit_date, :presence => true 
   validates :weight, :numericality => {:greater_than => 0, :only_integer => true}
+
+  scope :chronological, order('visit_date DESC')
+
+
 end
