@@ -23,6 +23,9 @@ Feature: Owner information
 					When I enter "Whitley" for "Name"
 					And I check the "Female" box
 					And I check the "Active" box
+					And I select "2007" for "pet_date_of_birth_1i"
+					And I select "January" for "pet_date_of_birth_2i"
+					And I select "19" for "pet_date_of_birth_3i"
 					And I click the "Create Pet" button
 					Then I should get to see "Your Pet was successfully created!"
 					And I should get to see "Name:"

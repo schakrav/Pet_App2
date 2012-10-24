@@ -29,4 +29,10 @@ FactoryGirl.define do
 		notes "OMG a visit"
 		association :pet
 	end	
+
+	factory :vaccine do
+		name "Rabies"
+		duration 366
+		association :animal
+	end	
 end
