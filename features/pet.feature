@@ -32,6 +32,8 @@ Feature: Owner information
 					And I should get to see "Whitley"
 					And I should get to see "Female:"
 					And I should get to see "true"
+					And I should get to see "Date of birth:"
+					And I should get to see "2007-01-19"
 					And I should get to see "Active:"
 					And I should get to see "true"
 					
