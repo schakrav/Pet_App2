@@ -1,10 +1,10 @@
+<%= link_to(image_tag("animal.png"), root_path) %>
 <p id="notice"><%= notice %></p>
 
 <p>
   <b>Name:</b>
   <%= @animal.name %>
 </p>
-
 
 <%= link_to 'Edit', edit_animal_path(@animal) %> |
 <%= link_to 'Back', animals_path %>
