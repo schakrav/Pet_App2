@@ -39,6 +39,8 @@ describe Owner do
 
 	describe "Validates allowed country" do
 		it {should allow_value("KSA").for(:country)}
+		it {should allow_value("QA").for(:country)}
+		it {should allow_value("UAE").for(:country)}
 	end	
 
 	describe "Rejects invalid country" do
