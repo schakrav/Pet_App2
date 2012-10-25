@@ -31,5 +31,23 @@ describe Vaccine do
  			should validate_presence_of :animal_id
  			should validate_presence_of :duration
  		end	
- 	end	
+
+ 		it "should validate_numericality_of" do
+			should validate_numericality_of(:duration).only_integer
+ 		end	
+
+ 		it "should allow valid numbers for duration" do
+ 			should allow_value(58).for(:duration)
+			should allow_value(180).for(:duration)
+			should allow_value(720).for(:duration)
+			should allow_value(1000).for(:duration)
+		end
+		
+		it "should allow valid numbers for duration" do
+			should_not allow_value(0).for(:duration)
+			should_not allow_value(-7).for(:duration)
+			should_not allow_value(28.1).for(:duration)
+			should_not allow_value(-365.25).for(:duration)	
+		end	
+	end	
 end

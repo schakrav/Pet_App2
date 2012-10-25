@@ -6,6 +6,7 @@ class Vaccine < ActiveRecord::Base
 	has_many :visits, :through => :vaccinations
 	
 	validates :name, :animal_id, :duration, :presence => true 
+	validates :duration, :numericality => {:greater_than => 0, :only_integer => true, :allow_blank => true, :allow_nil => true}
 
 
 
