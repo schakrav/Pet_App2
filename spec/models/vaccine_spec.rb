@@ -6,7 +6,7 @@ describe Vaccine do
 		@lakeland_terrier = FactoryGirl.create(:animal, :name => "Lakeland Terrier")
 		@canine_distemper = FactoryGirl.create(:vaccine, :animal => @labrador_retriever)
 		@rattlesnake_envenomation = FactoryGirl.create(:vaccine, :animal => @lakeland_terrier, :name => "Rattlesnake Envenomation")
-		@giardia = FactoryGirl.create(:vaccine, :animal => @lakeland_terrier, :name => "Giardia")
+		@giardia = FactoryGirl.create(:vaccine, :animal => @lakeland_terrier, :name => "Giardia", :duration => nil)
 	end
 
 	describe "Test factories" do
@@ -29,7 +29,6 @@ describe Vaccine do
  		it "should validate presence of" do
  			should validate_presence_of :name
  			should validate_presence_of :animal_id
- 			should validate_presence_of :duration
  		end	
 
  		it "should validate_numericality_of" do
@@ -60,4 +59,11 @@ describe Vaccine do
 			Vaccine.for_animal(@lakeland_terrier.id).alphabetical.map{|vaccine| vaccine.name}.should == ["Giardia", "Rattlesnake Envenomation"]
 		end	
 	end	
+
+	describe "Methods" do
+		it "should assume lifetime duration for nil or blank durations" do
+			@giardia.duration.should == 10000
+		end	
+	end	
+
 end
