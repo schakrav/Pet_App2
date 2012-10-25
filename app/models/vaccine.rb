@@ -9,6 +9,7 @@ class Vaccine < ActiveRecord::Base
 	validates :duration, :numericality => {:greater_than => 0, :only_integer => true, :allow_blank => true, :allow_nil => true}
 
  	scope :alphabetical, order('name ASC')
+ 	scope :for_animal, lambda{|animal_id| where('animal_id = ?', animal_id)} 
 
 
 end

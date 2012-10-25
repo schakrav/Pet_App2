@@ -55,5 +55,9 @@ describe Vaccine do
 		it "returns all the vaccine records in alphabetical order" do
 			Vaccine.alphabetical.map{|vaccine| vaccine.name}.should == ["Canine Distemper", "Giardia", "Rattlesnake Envenomation"]
 		end	
+
+		it "should return all vaccinations for a given animal" do
+			Vaccine.for_animal(@lakeland_terrier.id).alphabetical.map{|vaccine| vaccine.name}.should == ["Giardia", "Rattlesnake Envenomation"]
+		end	
 	end	
 end
