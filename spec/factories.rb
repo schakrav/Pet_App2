@@ -31,7 +31,7 @@ FactoryGirl.define do
 	end	
 
 	factory :vaccine do
-		name "Rabies"
+		name "Canine_Distemper"
 		duration 366
 		association :animal
 	end	
