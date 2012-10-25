@@ -72,7 +72,7 @@ describe Owner do
 			Owner.alphabetical.map{|o| o.firstname}.should == ["Rishika", "Smita", "Srinjoy"]
 		end
 
-		it "returns all the active records" do
+		it "returns all the active records alphabetically" do
 			Owner.active.alphabetical.map{|o| o.firstname}.should == ["Smita", "Srinjoy"]
 		end
 

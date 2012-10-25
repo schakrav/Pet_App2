@@ -50,4 +50,10 @@ describe Vaccine do
 			should_not allow_value(-365.25).for(:duration)	
 		end	
 	end	
+
+	describe "Scopes" do
+		it "returns all the vaccine records in alphabetical order" do
+			Vaccine.alphabetical.map{|vaccine| vaccine.name}.should == ["Canine Distemper", "Giardia", "Rattlesnake Envenomation"]
+		end	
+	end	
 end
