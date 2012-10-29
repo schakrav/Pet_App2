@@ -1,8 +1,7 @@
-<h1>Listing visits</h1>
+<h1>Listing Visits</h1>
 
 <table>
   <tr>
-    <th>Pet</th>
     <th>Visit date</th>
     <th>Weight</th>
     <th>Notes</th>
@@ -13,7 +12,6 @@
 
 <% @visits.each do |visit| %>
   <tr>
-    <td><%= visit.pet_id %></td>
     <td><%= visit.visit_date %></td>
     <td><%= visit.weight %></td>
     <td><%= visit.notes %></td>
@@ -26,4 +24,4 @@
 
 <br />
 
-<%= link_to 'New Visit', new_visit_path %>
+<%= link_to 'Add New Visit', new_visit_path %>

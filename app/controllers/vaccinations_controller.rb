@@ -2,6 +2,7 @@ class VaccinationsController < ApplicationController
   # GET /vaccinations
   # GET /vaccinations.json
   def index
+    @title = "Vaccination Listing"
     @vaccinations = Vaccination.all
 
     respond_to do |format|
@@ -24,6 +25,7 @@ class VaccinationsController < ApplicationController
   # GET /vaccinations/new
   # GET /vaccinations/new.json
   def new
+    @title = "New Vaccination"
     @vaccination = Vaccination.new
 
     respond_to do |format|

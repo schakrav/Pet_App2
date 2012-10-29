@@ -26,7 +26,7 @@ FactoryGirl.define do
 	factory :visit do
 		weight 69
 		visit_date 3.days.ago.to_date
-		notes "OMG a visit"
+		notes "Regular Check-up"
 		association :pet
 	end	
 
@@ -34,5 +34,11 @@ FactoryGirl.define do
 		name "Canine Distemper"
 		duration 366
 		association :animal
+	end	
+
+	factory :vaccination do
+		dosage "100 ml"
+		association :vaccine
+		association :visit
 	end	
 end

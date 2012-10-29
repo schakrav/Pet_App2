@@ -6,9 +6,8 @@ Feature: Standard Business
 
 		Scenario: Homepage
 			When I go to the application root
-			Then I should see "Welcome to my application!"
-
-			And I should see "This is the home page for the online pet application"
+			Then I should see "Welcome to our homepage!"
+			And I should see "Joy Veterinary Services will get ur lil one up & running ;)"
 			And I should see a button named "Sign up now!"
 			And I should see a button named "Sign in"
 			

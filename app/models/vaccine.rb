@@ -17,7 +17,7 @@ class Vaccine < ActiveRecord::Base
 
  	def check_vaccine_durability
  		duration = self.duration
- 		self.duration = 10000 if duration.nil? || duration.blank?
+ 		self.duration = 7305 if duration.nil? || duration.blank?
  	end	
 
 

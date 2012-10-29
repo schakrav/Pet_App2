@@ -1,4 +1,4 @@
-Feature: Owner information
+Feature: Animal information
 	In order to track my veterinary visits
 	As a client
 	I want to be able to list, create, update, and delete animal information
@@ -11,7 +11,7 @@ Feature: Owner information
 					Then for the "title", I should see "Pet App | Animal Listing"
 					And for the "th", I should see "Name"
 					And for the "td", I should see "German Shepherd"
-					And for the "body", I should see "Listing animals"
+					And for the "body", I should see "Listing Animals"
 					And for the "body", I should see a link to "Add New Animal"
 
 				Scenario: Create Animal

@@ -2,6 +2,7 @@ class VisitsController < ApplicationController
   # GET /visits
   # GET /visits.json
   def index
+     @title = "Visit Listing"
     @visits = Visit.all
 
     respond_to do |format|
@@ -24,6 +25,7 @@ class VisitsController < ApplicationController
   # GET /visits/new
   # GET /visits/new.json
   def new
+    @title = "Log Visit"
     @visit = Visit.new
 
     respond_to do |format|

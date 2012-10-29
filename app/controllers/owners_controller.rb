@@ -2,7 +2,7 @@ class OwnersController < ApplicationController
   # GET /owners
   # GET /owners.json
   def index
-    @title = "Owners Listing"
+    @title = "Owner Listing"
     @owners = Owner.all
 
     respond_to do |format|

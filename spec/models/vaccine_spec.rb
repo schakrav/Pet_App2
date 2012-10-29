@@ -62,7 +62,7 @@ describe Vaccine do
 
 	describe "Methods" do
 		it "should assume lifetime duration for nil or blank durations" do
-			@giardia.duration.should == 10000
+			@giardia.duration.should == 7305
 		end	
 	end	
 
