@@ -12,8 +12,7 @@ Feature: Visit information
 					And for the "th", I should see "Visit Date"
 					And for the "th", I should see "Weight"
 					And for the "th", I should see "Notes"
-					And for the "td", I should see "2012-10-26"
-					And for the "td", I should see 69
+					And for the "td", I should see the number "69"
 					And for the "td", I should see "Regular Check-up"
 					And for the "body", I should see "Listing Visits"
 					And for the "body", I should see a link to "Add New Visit"

@@ -15,7 +15,6 @@ Feature: Pet information
 					And for the "th", I should see "Active"
 					And for the "td", I should see "Zaz"
 					And for the "td", I should see "true"
-					And for the "td", I should see "2007-10-29"
 					And for the "td", I should see "true"
 					And for the "body", I should see "Listing Pets"
 					And for the "body", I should see a link to "Add New Pet"
@@ -48,5 +47,5 @@ Feature: Pet information
 
 				Scenario: Delete Pet
    					Given that I am on the 'pets' page
-    				When I click the "Destroy" link for "Zaz"
-    				Then I should not see "Zaz"	
+    				When I click the "Destroy" link for "Didum"
+    				Then I should not see "Didum"	

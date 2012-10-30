@@ -8,7 +8,7 @@ Feature: Owner information
 
 				Scenario: List Owners
 					Given I am on the 'owners' page
-					Then for the "title", I should see "Pet App | Owners Listing"
+					Then for the "title", I should see "Pet App | Owner Listing"
 					And for the "th", I should see "Owner"
 					And for the "th", I should see "Country"
 					And for the "th", I should see "Email"

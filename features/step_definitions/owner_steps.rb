@@ -1,8 +1,17 @@
 Given /^an initial business$/ do
   @rishika = FactoryGirl.create(:owner, :firstname => "Rishika", :lastname => "Xi", :address => "Bin Jaber", :city => "Kiev", :email => "rishikaachy@yahoo.com")
+  
   @german_shepherd = FactoryGirl.create(:animal)
-  @zaz = FactoryGirl.create(:pet)
   @pug = FactoryGirl.create(:animal, :name => "Pug")
+  
+  @zaz = FactoryGirl.create(:pet)
+  @didum = FactoryGirl.create(:pet, :name => "Didum", :female => false, :date_of_birth => 2.years.ago.to_date, :animal => @pug)
+  
+  @visit_1 = FactoryGirl.create(:visit)
+  
+  @canine_distemper = FactoryGirl.create(:vaccine)
+  
+  @zaz_caninetemper = FactoryGirl.create(:vaccination)
 end
 
 Given /^I am on the 'New Owner' page$/ do
