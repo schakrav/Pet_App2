@@ -11,6 +11,7 @@ Given /^an initial business$/ do
   @visit_2 = FactoryGirl.create(:visit, :weight => 39, :visit_date => 2.days.ago.to_date, :notes => "No worries", :pet => @didum)
   
   @canine_distemper = FactoryGirl.create(:vaccine)
+  @rattlesnake_envenomation = FactoryGirl.create(:vaccine, :name => "Rattlesnake Envenomation", :duration => 58, :animal => @pug)
   
   @zaz_caninetemper = FactoryGirl.create(:vaccination)
 end
