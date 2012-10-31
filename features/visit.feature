@@ -12,38 +12,34 @@ Feature: Visit information
 					And for the "th", I should see "Visit Date"
 					And for the "th", I should see "Weight"
 					And for the "th", I should see "Notes"
-					And for the "td", I should see the number "69"
+					And for the "td", I should see "69"
 					And for the "td", I should see "Regular Check-up"
 					And for the "body", I should see "Listing Visits"
 					And for the "body", I should see a link to "Add New Visit"
 
 				Scenario: Create Visit
-					Given that I am on the 'New Pet' page
-					When I enter "Whitley" for "Name"
-					And I check the "Female" box
-					And I check the "Active" box
-					And I select "2007" for "pet_date_of_birth_1i"
-					And I select "January" for "pet_date_of_birth_2i"
-					And I select "19" for "pet_date_of_birth_3i"
-					And I click the "Create Pet" button
-					Then I should get to see "Your Pet was successfully created!"
-					And I should get to see "Name:"
-					And I should get to see "Whitley"
-					And I should get to see "Female:"
-					And I should get to see "true"
-					And I should get to see "Date of birth:"
-					And I should get to see "2007-01-19"
-					And I should get to see "Active:"
-					And I should get to see "true"
+					Given that I am on the 'New Visit' page
+					And I enter "1" for "Pet"
+					And I select "2009" for "visit_visit_date_1i"
+					And I select "March" for "visit_visit_date_2i"
+					And I select "4" for "visit_visit_date_3i"
+					And I enter "25" for "Weight"
+					And I enter "Initial Check Up" for "Notes"
+					And I click the "Create Visit" button
+					Then I should get to see "Your Visit was successfully recorded!"
+					And I should get to see "Pet:"
+					And I should get to see "1"
+					And I should get to see "Visit date:"
+					And I should get to see "2009-03-04"
+					And I should get to see "Weight:"
+					And I should get to see "25"
+					And I should get to see "Notes:"
+					And I should get to see "Initial Check Up"
 					
 				Scenario: Update Visit
-					Given that I am on the 'pets' page
-					When I click the "Edit" link for "Zaz"
-					And I change the Name to "Rukhsar"
-					And I click the "Update Pet" button
-					Then I should see "Your Pet was successfully updated!"
+					Given that I am on the 'visits' page
+					When I go click the "Edit" link for "Regular Check-up"
+					
 
 				Scenario: Delete Visit
-   					Given that I am on the 'pets' page
-    				When I click the "Destroy" link for "Zaz"
-    				Then I should not see "Zaz"	
+   					

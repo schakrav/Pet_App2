@@ -46,7 +46,7 @@ class VisitsController < ApplicationController
 
     respond_to do |format|
       if @visit.save
-        format.html { redirect_to @visit, notice: 'Visit was successfully created.' }
+        format.html { redirect_to @visit, notice: 'Your Visit was successfully recorded!' }
         format.json { render json: @visit, status: :created, location: @visit }
       else
         format.html { render action: "new" }
