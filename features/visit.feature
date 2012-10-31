@@ -39,6 +39,10 @@ Feature: Visit information
 				Scenario: Update Visit
 					Given that I am on the 'visits' page
 					When I go click the "Edit" link for "Regular Check-up"
+					And I change the "Weight" field to "93"
+					And I click the "Update Visit" button
+					Then I should see "Visit was successfully updated."
+					
 					
 
 				Scenario: Delete Visit

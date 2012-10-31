@@ -13,3 +13,8 @@ When /^I go click the "(.*?)" link for "(.*?)"$/ do |link, value|
     	end
   	end    
 end
+
+When /^I change the "(.*?)" field to "(.*?)"$/ do |field, new_value|
+	 fill_in field, :with => new_value
+end
+
