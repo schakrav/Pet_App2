@@ -8,6 +8,7 @@ Given /^an initial business$/ do
   @didum = FactoryGirl.create(:pet, :name => "Didum", :female => false, :date_of_birth => 2.years.ago.to_date, :animal => @pug)
   
   @visit_1 = FactoryGirl.create(:visit)
+  @visit_2 = FactoryGirl.create(:visit, :weight => 39, :visit_date => 2.days.ago.to_date, :notes => "No worries", :pet => @didum)
   
   @canine_distemper = FactoryGirl.create(:vaccine)
   

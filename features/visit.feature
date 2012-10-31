@@ -43,7 +43,9 @@ Feature: Visit information
 					And I click the "Update Visit" button
 					Then I should see "Visit was successfully updated."
 					
-					
-
 				Scenario: Delete Visit
-   					
+   					Given that I am on the 'visits' page
+    				When I go click the "Destroy" link for "No worries"
+    				Then I should not see "No worries"	
+    					
+    		
