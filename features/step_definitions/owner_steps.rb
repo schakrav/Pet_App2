@@ -1,5 +1,5 @@
 Given /^an initial business$/ do
-  @rishika = FactoryGirl.create(:owner, :firstname => "Rishika", :lastname => "Xi", :address => "Bin Jaber", :city => "Kiev", :email => "rishikaachy@yahoo.com")
+  @rishika = FactoryGirl.create(:owner, :firstname => "Rishika", :lastname => "Xi", :address => "MapleWood Street", :city => "Silkeborg", :country => "DEN", :phone => "97444724223", :email => "rishikaachy@yahoo.com", :active => false)
   
   @german_shepherd = FactoryGirl.create(:animal)
   @pug = FactoryGirl.create(:animal, :name => "Pug")

@@ -21,6 +21,16 @@
   <%= @pet.active %>
 </p>
 
+<p>
+  <b>Owner:</b>
+  <%= @pet.owner_id %>
+</p>
+
+<p>
+  <b>Animal:</b>
+  <%= @pet.animal_id %>
+</p>
+
 
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>

@@ -9,9 +9,11 @@ Feature: Visit information
 				Scenario: List Visits
 					Given that I am on the 'visits' page
 					Then for the "title", I should see "Pet App | Visit Listing"
+					And for the "th", I should see "Pet"
 					And for the "th", I should see "Visit Date"
 					And for the "th", I should see "Weight"
 					And for the "th", I should see "Notes"
+					And for the "td", I should see "1"
 					And for the "td", I should see "69"
 					And for the "td", I should see "Regular Check-up"
 					And for the "body", I should see "Listing Visits"

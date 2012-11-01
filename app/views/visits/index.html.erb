@@ -3,6 +3,7 @@
 <table id="Visit List">
 
   <tr>
+    <th>Pet</th>
     <th>Visit Date</th>
     <th>Weight</th>
     <th>Notes</th>
@@ -13,6 +14,7 @@
 
 <% @visits.each do |visit| %>
   <tr>
+    <td><%= visit.pet_id %></td>
     <td><%= visit.visit_date %></td>
     <td><%= visit.weight %></td>
     <td><%= visit.notes %></td>

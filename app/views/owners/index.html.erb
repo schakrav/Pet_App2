@@ -7,9 +7,9 @@
     <th>Country</th>
     <th>Email</th>
     <th>Active</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Phone</th>
   </tr>
 
 <% @owners.each do |owner| %>
@@ -18,6 +18,9 @@
     <td><%= owner.country %></td>
     <td><%= owner.email %></td>
     <td><%= owner.active %></td>
+    <td><%= owner.address %></td>
+    <td><%= owner.city %></td>
+    <td><%= owner.phone %></td>
     <td><%= link_to 'Show', owner %></td>
     <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
     <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
