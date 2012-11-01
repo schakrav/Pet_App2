@@ -37,7 +37,7 @@ FactoryGirl.define do
 	end	
 
 	factory :vaccination do
-		dosage "100 ml"
+		dosage "100 ml."
 		association :vaccine
 		association :visit
 	end	

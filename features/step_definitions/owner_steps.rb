@@ -13,7 +13,8 @@ Given /^an initial business$/ do
   @canine_distemper = FactoryGirl.create(:vaccine)
   @rattlesnake_envenomation = FactoryGirl.create(:vaccine, :name => "Rattlesnake Envenomation", :duration => 58, :animal => @pug)
   
-  @zaz_caninetemper = FactoryGirl.create(:vaccination)
+  @zaz_caninedistemper = FactoryGirl.create(:vaccination)
+  @didum_rattlesnakeenvenomation  = FactoryGirl.create(:vaccination, :dosage => "20 mg.", :vaccine =>  @rattlesnake_envenomation, :visit => @visit_2)
 end
 
 Given /^I am on the 'New Owner' page$/ do

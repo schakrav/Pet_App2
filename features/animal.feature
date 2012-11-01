@@ -28,6 +28,7 @@ Feature: Animal information
 					And I change the Name to "Dalmatian"
 					And I click the "Update Animal" button
 					Then I should see "Animal was successfully updated!"
+					And I should see "Name: Dalmatian"
 
 				Scenario: Delete Animal
    					Given that I am on the 'animals' page

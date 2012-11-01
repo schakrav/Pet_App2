@@ -44,6 +44,7 @@ Feature: Visit information
 					And I change the "Weight" field to "93"
 					And I click the "Update Visit" button
 					Then I should see "Visit was successfully updated."
+					And I should see "Weight: 93"
 					
 				Scenario: Delete Visit
    					Given that I am on the 'visits' page

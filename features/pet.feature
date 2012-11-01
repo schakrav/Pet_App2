@@ -51,9 +51,10 @@ Feature: Pet information
 				Scenario: Update Pet
 					Given that I am on the 'pets' page
 					When I click the "Edit" link for "Zaz"
-					And I change the Name to "Rukhsar"
+					And I change the Name to "Noah"
 					And I click the "Update Pet" button
 					Then I should see "Your Pet was successfully updated!"
+					And I should see "Name: Noah"
 
 				Scenario: Delete Pet
    					Given that I am on the 'pets' page

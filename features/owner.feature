@@ -56,6 +56,7 @@ Feature: Owner information
 					And I change the email address to "chaxz@cmu.edu"
 					And I click the "Update" button
 					Then I should see "Rishika Xi was successfully updated!"
+					And I should see "Email: chaxz@cmu.edu"
 
 				Scenario: Delete Owner
    					Given I am on the 'owners' page

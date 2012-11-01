@@ -38,6 +38,7 @@ Feature: Vaccine information
 					And I change the "Name" field to "Leukemia"
 					And I click the "Update Vaccine" button
 					Then I should see "Vaccine was successfully updated."
+					And I should see "Name: Leukemia"
 					
 				Scenario: Delete Vaccine
    					Given that I am on the 'Vaccines' page
