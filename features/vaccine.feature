@@ -34,10 +34,16 @@ Feature: Vaccine information
 				
 				Scenario: Update Vaccine
 					Given that I am on the 'Vaccines' page
-					
+					When I do click the "Edit" link for "Canine Distemper"
+					And I change the "Name" field to "Leukemia"
+					And I click the "Update Vaccine" button
+					Then I should see "Vaccine was successfully updated."
 					
 				Scenario: Delete Vaccine
    					Given that I am on the 'Vaccines' page
+   					When I do click the "Destroy" link for "Rattlesnake Envenomation"
+    				Then I should not see "Rattlesnake Envenomation"	
+    					
     				
     					
     		
