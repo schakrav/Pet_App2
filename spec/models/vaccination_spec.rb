@@ -19,6 +19,7 @@ describe Vaccination do
 		@visit4 = FactoryGirl.create(:visit, :pet => @snowy)
 		@visit5 = FactoryGirl.create(:visit, :pet => @snowy, :visit_date => 7.weeks.ago.to_date)
 		@visit6 = FactoryGirl.create(:visit, :pet => @rox, :weight => 35, :visit_date => 4.months.ago.to_date)
+		@visit7 = FactoryGirl.create(:visit, :pet => @rox, :weight => 22, :visit_date => 1.day.ago.to_date)
 	
 		@snowy_hepatitis_shot = FactoryGirl.create(:vaccination, :vaccine => @hepatitis, :visit => @visit4)
 		@zaz_hepatitis_shot = FactoryGirl.create(:vaccination, :vaccine => @hepatitis, :visit => @visit5)
@@ -41,6 +42,7 @@ describe Vaccination do
 			@visit4.should be_valid
 			@visit5.should be_valid
 			@visit6.should be_valid
+			@visit7.should be_valid
 			@snowy_hepatitis_shot.should be_valid
 			@zaz_hepatitis_shot.should be_valid
 			@snowy_measles_shot.should be_valid
@@ -65,6 +67,7 @@ describe Vaccination do
  			@visit4.pet.name.should == "Snowy"
  			@visit5.weight == 69
  			@visit6.weight == 35
+ 			@visit7.weight == 22
  			@snowy_hepatitis_shot.vaccine.name.should == "Hepatitis"
  			@zaz_hepatitis_shot.vaccine.name.should == "Hepatitis"
  			@snowy_measles_shot.vaccine.name.should == "Measles"
@@ -81,12 +84,13 @@ describe Vaccination do
  	end
 
  	describe "Scopes" do
- 		it "should put all the visits in chronological order" do
+ 		it "should put all the vaccinations in chronological order" do
 			sample_dates = Array.new
+			sample_dates << 3.days.ago.to_date
 			sample_dates << 3.days.ago.to_date
 			sample_dates << 7.weeks.ago.to_date
 			sample_dates << 4.months.ago.to_date
-			ordered_dates = Vaccination.chronological.map {|vaccination| vaccination.visit_date}
+			ordered_dates = Vaccination.chronological.map {|vaccination| vaccination.visit.visit_date}
 			ordered_dates.should == sample_dates
 		end	
 
@@ -98,7 +102,10 @@ describe Vaccination do
 		end
 
 		it "should allow us to return the vaccinations for a given visit" do
-		
+			Vaccination.for_visit(@visit4.id).size.should == 2
+			Vaccination.for_visit(@visit5.id).size.should == 1
+			Vaccination.for_visit(@visit6.id).size.should == 1
+			Vaccination.for_visit(@visit7.id).size.should == 0
 		end
  	end	
 end

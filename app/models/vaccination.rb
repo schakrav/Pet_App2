@@ -8,5 +8,9 @@ class Vaccination < ActiveRecord::Base
 	
 	scope :for_vaccine, lambda{|vaccine_id| where('vaccine_id = ?', vaccine_id)} 
 	scope :for_visit, lambda{|visit_id| where('visit_id = ?', visit_id)} 
-	scope :latest, lambda{|number| where('number = ?', number)}
+	scope :chronological, joins(:visit).order('visit_date DESC') 
+	
+	scope :latest, lambda{|number| limit(number).joins(:visit).order('visit_date DESC')}
+	
+	scope :in_orders_with, lambda { |orders, type| where('itemable_type IS ?', type).joins(:order) & orders }
 end

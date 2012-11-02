@@ -10,6 +10,6 @@ class Visit < ActiveRecord::Base
 
   scope :chronological, order('visit_date DESC')
   scope :for_pet, lambda{|pet_id| where('pet_id = ?', pet_id)}
-  scope :latest, lambda{|number| limit(number).order('date DESC')}
+  scope :latest, lambda{|number| limit(number).order('visit_date DESC')}
 
 end
