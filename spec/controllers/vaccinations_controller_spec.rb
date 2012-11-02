@@ -24,7 +24,7 @@ describe VaccinationsController do
   # Vaccination. As you add validations to Vaccination, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {:dosage => "100 ml.", :vaccine_id => 1, :visit_id => 1}
   end
 
   # This should return the minimal set of values that should be in the session

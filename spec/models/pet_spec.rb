@@ -11,9 +11,7 @@ describe Pet do
 		should validate_presence_of(:name)
 	end	
 
-	it "should have proper validations" do
 
-	end
 
 	describe "Create our factories" do
 		before(:each) do
@@ -21,7 +19,7 @@ describe Pet do
  			@persian_cat = FactoryGirl.create(:animal, :name => "Persian Cat")
  			@alsatian = FactoryGirl.create(:animal)
  			@srinjoy = FactoryGirl.create(:owner)
- 			@rishika = FactoryGirl.create(:owner, :firstname => "Rishika", :lastname => "Chy", :address => "Hannover93", :city => "WestBengal", :country => "UAE", :email => "rishikaachy@yahoo.com", :phone => "97444724223")
+ 			@rishika = FactoryGirl.create(:owner, :firstname => "Rishika", :lastname => "Chy", :address => "Hannover93", :city => "WestBengal", :country => "UAE", :email => "rishikaachy@yahoo.com", :phone => "97412345678")
 			@zaz = FactoryGirl.create(:pet, :name => "Zaz", :animal => @german_shepherd, :owner => @srinjoy)
 			@toby = FactoryGirl.create(:pet, :name => "Toby", :animal => @alsatian, :owner => @srinjoy)
  		end	
@@ -42,7 +40,7 @@ describe Pet do
  			@rishika.city.should == "WestBengal"
  			@rishika.country.should == "UAE"
  			@rishika.email.should == "rishikaachy@yahoo.com"
- 			@rishika.phone.should == "97444724223"
+ 			@rishika.phone.should == "97412345678"
  			@rishika.active.should == true
  			@zaz.name.should == "Zaz"
  			@zaz.female.should == true
