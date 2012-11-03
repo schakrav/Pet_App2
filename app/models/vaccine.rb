@@ -19,7 +19,4 @@ class Vaccine < ActiveRecord::Base
  		duration = self.duration
  		self.duration = 7305 if duration.nil? || duration.blank?
  	end	
-
-
-
 end

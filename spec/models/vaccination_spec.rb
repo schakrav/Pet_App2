@@ -17,14 +17,14 @@ describe Vaccination do
 		@placebo = FactoryGirl.create(:vaccine, :name => "Placebo", :duration => 1)
 
 		@visit4 = FactoryGirl.create(:visit, :pet => @snowy)
-		@visit5 = FactoryGirl.create(:visit, :pet => @snowy, :visit_date => 7.weeks.ago.to_date)
+		@visit5 = FactoryGirl.create(:visit, :pet => @zaz, :visit_date => 7.weeks.ago.to_date)
 		@visit6 = FactoryGirl.create(:visit, :pet => @rox, :weight => 35, :visit_date => 4.months.ago.to_date)
 		@visit7 = FactoryGirl.create(:visit, :pet => @rox, :weight => 22, :visit_date => 1.day.ago.to_date)
 	
 		@snowy_hepatitis_shot = FactoryGirl.create(:vaccination, :vaccine => @hepatitis, :visit => @visit4)
-		@zaz_hepatitis_shot = FactoryGirl.create(:vaccination, :vaccine => @hepatitis, :visit => @visit5)
-		@snowy_measles_shot = FactoryGirl.create(:vaccination, :vaccine => @measles, :visit => @visit4)
-		@rox_parainfluenza_shot = FactoryGirl.create(:vaccination, :vaccine => @parainfluenza, :visit => @visit6)
+		@zaz_hepatitis_shot = FactoryGirl.create(:vaccination, :vaccine => @hepatitis, :visit => @visit5, :dosage => "5 ml.")
+		@snowy_measles_shot = FactoryGirl.create(:vaccination, :vaccine => @measles, :visit => @visit4, :dosage => "0.025 l.")
+		@rox_parainfluenza_shot = FactoryGirl.create(:vaccination, :vaccine => @parainfluenza, :visit => @visit6, :dosage => "10 ml")
 	end	
 
 	describe "Test factories" do
@@ -107,5 +107,16 @@ describe Vaccination do
 			Vaccination.for_visit(@visit6.id).size.should == 1
 			Vaccination.for_visit(@visit7.id).size.should == 0
 		end
+
+		it "should allow us to return the last 'x' vaccinations" do
+			Vaccination.for_vaccine(@hepatitis.id).latest(3).size.should_not == 3
+			Vaccination.for_vaccine(@hepatitis.id).latest(3).size.should == 2 
+			Vaccination.for_vaccine(@hepatitis.id).latest(2).size.should == 2
+			Vaccination.for_vaccine(@hepatitis.id).latest(1).size.should == 1
+			Vaccination.for_visit(@visit4.id).latest(3).size.should_not == 3
+			Vaccination.for_visit(@visit4.id).latest(3).size.should == 2
+			Vaccination.for_visit(@visit4.id).latest(2).size.should == 2
+			Vaccination.for_visit(@visit4.id).latest(1).size.should == 1
+		end	
  	end	
 end
