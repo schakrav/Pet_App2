@@ -3,18 +3,19 @@ require 'spec_helper'
 describe Vaccination do
 	before(:each) do
 		@srinjoy = FactoryGirl.create(:owner)
-		@rishika = FactoryGirl.create(:owner, :firstname => "Rishika", :lastname => "Chy", :address => "Tampa Bay", :city => "Nordsjaelland", :country => "DEN", :email => "rishikaachy@yahoo.com", :phone => "97412345678")
+		@rishika = FactoryGirl.create(:owner, :firstname => "Rishika", :lastname => "Chy", :address => "Tampa Bay", :city => "Nordsjaelland", :country => "DEN", :email => "rishikaachy@yahoo.com", :phone => "97412345678", :active => true)
 	
 		@golden_retriever = FactoryGirl.create(:animal, :name => "Golden Retriever")
+		@german_shepherd = FactoryGirl.create(:animal, :name => "German Shepherd")	
 		
-		@zaz = FactoryGirl.create(:pet, :owner => @rishika)
-		@snowy = FactoryGirl.create(:pet, :owner => @srinjoy, :name => "Snowy")
-		@rox = FactoryGirl.create(:pet, :animal => @golden_retriever, :owner => @rishika, :name => "Rox", :female => false, :date_of_birth => 3.years.ago.to_date)
+		@zaz = FactoryGirl.create(:pet, :owner => @rishika, :animal => @german_shepherd, :active => true)
+		@snowy = FactoryGirl.create(:pet, :owner => @srinjoy, :name => "Snowy", :animal => @german_shepherd, :active => true)
+		@rox = FactoryGirl.create(:pet, :animal => @golden_retriever, :owner => @rishika, :name => "Rox", :female => false, :date_of_birth => 3.years.ago.to_date, :active => true)
 	
-		@hepatitis = FactoryGirl.create(:vaccine, :name => "Hepatitis")
-		@measles = FactoryGirl.create(:vaccine, :name => "Measles", :duration => 200)
+		@hepatitis = FactoryGirl.create(:vaccine, :name => "Hepatitis", :animal => @german_shepherd)
+		@measles = FactoryGirl.create(:vaccine, :name => "Measles", :duration => 200, :animal => @german_shepherd)
 		@parainfluenza = FactoryGirl.create(:vaccine, :name => "Parainfluenza", :duration => 300, :animal => @golden_retriever)
-		@placebo = FactoryGirl.create(:vaccine, :name => "Placebo", :duration => 1)
+		@placebo = FactoryGirl.create(:vaccine, :name => "Placebo", :duration => 1, :animal => @german_shepherd)
 
 		@visit4 = FactoryGirl.create(:visit, :pet => @snowy)
 		@visit5 = FactoryGirl.create(:visit, :pet => @zaz, :visit_date => 7.weeks.ago.to_date)
@@ -35,6 +36,7 @@ describe Vaccination do
 			@snowy.should be_valid
 			@rox.should be_valid
 			@golden_retriever.should be_valid
+			@german_shepherd.should be_valid
 			@hepatitis.should be_valid
 			@measles.should be_valid
 			@parainfluenza.should be_valid
@@ -57,6 +59,7 @@ describe Vaccination do
  			@srinjoy.firstname.should == "Srinjoy"
  			@rishika.lastname.should == "Chy"
  			@golden_retriever.name.should == "Golden Retriever"
+ 			@german_shepherd.name.should == "German Shepherd"
  			@zaz.name.should == "Zaz"
  			@snowy.name.should == "Snowy"
  			@rox.name.should == "Rox"
@@ -76,10 +79,19 @@ describe Vaccination do
  	end	
 
  	describe "Validations" do
- 		it "should validate presence of" do
- 			should validate_presence_of :dosage
- 			should validate_presence_of :vaccine_id
- 			should validate_presence_of :visit_id
+ 		it "should identify a vaccine not offered by QATS as invalid" do
+ 			@heartworm = FactoryGirl.build(:vaccine, :name => "Heartworm", :animal => @golden_retriever)
+ 			@heartworm_vaccination = FactoryGirl.build(:vaccination, :visit => @visit5, :vaccine => @heartworm)
+ 			@heartworm_vaccination.should_not be_valid
+ 		end	
+
+ 		it "should not allow vaccines that are inappropriate for the animal" do
+ 			@visit_rox = FactoryGirl.create(:visit, :pet => @rox)
+ 			good_vaccination = FactoryGirl.build(:vaccination, :visit => @visit_rox, :vaccine => @parainfluenza)
+ 			good_vaccination.should be_valid
+
+ 			bad_vaccination = FactoryGirl.build(:vaccination, :visit => @visit_rox, :vaccine => @measles)
+ 			bad_vaccination.should_not be_valid
  		end	
  	end
 

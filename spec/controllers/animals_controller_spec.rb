@@ -6,7 +6,7 @@ describe AnimalsController do
   # Animal. As you add validations to Animal, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {:name => "Dog"}
+    {:name => "German Shepherd"}
   end
 
   # This should return the minimal set of values that should be in the session

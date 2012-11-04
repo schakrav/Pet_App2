@@ -20,6 +20,7 @@ require 'spec_helper'
 
 describe VaccinationsController do
 
+
   # This should return the minimal set of attributes required to create a valid
   # Vaccination. As you add validations to Vaccination, be sure to
   # update the return value of this method accordingly.

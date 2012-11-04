@@ -6,7 +6,7 @@ describe PetsController do
   # Pet. As you add validations to Pet, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {:name => "Zaz"}
+    {:name => "Zaz", :female => true, :date_of_birth => 5.years.ago.to_date, :active => true, :owner_id => 1, :animal_id => 1}
   end
 
   # This should return the minimal set of values that should be in the session

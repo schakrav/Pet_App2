@@ -24,7 +24,7 @@ describe VisitsController do
   # Visit. As you add validations to Visit, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {:pet_id => 1, :weight => 30, :visit_date => 3.days.ago }
+    {:pet_id => 1, :weight => 69, :visit_date => 3.days.ago.to_date, :notes => "Regular Check-up"}
   end
 
   # This should return the minimal set of values that should be in the session
