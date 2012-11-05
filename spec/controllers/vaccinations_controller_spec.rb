@@ -25,6 +25,44 @@ describe VaccinationsController do
   # Vaccination. As you add validations to Vaccination, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
+      owner = Owner.create(
+    #  :first_name => "Srinjoy",
+     # :last_name => "Chakravarty",
+      :address => "704-B The Pearl Qatar",
+      :city => "Doha",
+      :country => "QA",
+      :email => "chaxz93@gmail.com",
+      :phone => "97444724223",
+      :active => true)
+  
+  animal = Animal.create(
+        :name => "German Shepherd")
+
+  pet = Pet.create(
+        :name => "Zaz",
+        :female => true,
+        :active => true,
+        :date_of_birth => 5.years.ago.to_date,
+        :owner_id => owner.id,
+        :animal_id => animal.id)
+
+  visit = Visit.create(
+        :weight => 28,
+        :visit_date => 3.days.ago.to_date,
+        :notes => "Regular Check-up",
+        :pet_id => pet.id)
+
+  vaccine = Vaccine.create(
+        :name => "Canine Distemper",
+        :duration => 366,
+        :animal_id => animal.id)
+
+# vaccination = Vaccination.create(
+ #       :dosage => "100 ml.",
+  #      :vaccine_id => vaccine.id,
+   #     :visit_id => visit.id)
+
+  {:visit_id => visit.id, :vaccine_id => vaccine.id}
     {:dosage => "100 ml.", :vaccine_id => 1, :visit_id => 1}
   end
 
