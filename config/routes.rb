@@ -21,6 +21,7 @@ PetApp::Application.routes.draw do
   match '/privacy', :to => 'pages#privacy'
   match '/signup', :to => 'users#new'
   match '/login', :to => 'sessions#new'
+  match '/logout', :to => 'sessions#destroy'
 
   
 
