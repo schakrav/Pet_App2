@@ -26,8 +26,8 @@ describe VaccinationsController do
   # update the return value of this method accordingly.
   def valid_attributes
       owner = Owner.create(
-    #  :first_name => "Srinjoy",
-     # :last_name => "Chakravarty",
+      :firstname => "Srinjoy",
+      :lastname => "Chakravarty",
       :address => "704-B The Pearl Qatar",
       :city => "Doha",
       :country => "QA",

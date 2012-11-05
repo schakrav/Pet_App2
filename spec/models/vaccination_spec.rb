@@ -79,7 +79,7 @@ describe Vaccination do
  	end	
 
  	describe "Validations" do
- 		it "should identify a vaccine not offered by QATS as invalid" do
+ 		it "should identify a vaccine not offered by Joy Vets as invalid" do
  			@heartworm = FactoryGirl.build(:vaccine, :name => "Heartworm", :animal => @golden_retriever)
  			@heartworm_vaccination = FactoryGirl.build(:vaccination, :visit => @visit5, :vaccine => @heartworm)
  			@heartworm_vaccination.should_not be_valid
