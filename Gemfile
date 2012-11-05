@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'heroku'
+gem 'bcrypt-ruby'
 gem 'rails', '3.2.8'
 gem 'jquery-rails'
 gem 'execjs'

@@ -1,4 +1,6 @@
 PetApp::Application.routes.draw do
+  
+
   resources :vaccines
 
   resources :vaccinations
@@ -8,6 +10,8 @@ PetApp::Application.routes.draw do
   resources :animals
   resources :pets
   resources :owners
+  resources :users
+  resources :sessions
 
   root :to => 'pages#home'
 
@@ -15,16 +19,9 @@ PetApp::Application.routes.draw do
   match '/about', :to => 'pages#about'
   match '/contact', :to => 'pages#contact'
   match '/privacy', :to => 'pages#privacy'
-  match '/signup', :to => 'owners#new'
-  match '/owners', :to => 'owners#index'
-  match '/pets/new', :to => 'pets#new' 
-  match '/pets', :to => 'pets#index' 
-  match '/animals/new', :to => 'animals#new' 
-  match '/animals', :to => 'animals#index'
-  match '/visits/new', :to => 'visits#new'
-  match '/vaccines/new', :to => 'vaccines#new'
-  match '/vaccinations/new', :to => 'vaccinations#new'
-  match '/visits', :to => 'visits#index'
-  match '/vaccines', :to => 'vaccines#index'
-  match '/vaccinations', :to => 'vaccinations#index'
+  match '/signup', :to => 'users#new'
+  match '/login', :to => 'sessions#new'
+
+  
+
 end
