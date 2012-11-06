@@ -21,6 +21,7 @@ Feature: Visit information
 
 				Scenario: Create Visit
 					Given that I am on the 'New Visit' page
+					Then for the "title", I should see "Pet App | Log Visit"
 					And I enter "1" for "Pet"
 					And I select "2009" for "visit_visit_date_1i"
 					And I select "March" for "visit_visit_date_2i"

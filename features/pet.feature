@@ -25,6 +25,7 @@ Feature: Pet information
 
 				Scenario: Create Pet
 					Given that I am on the 'New Pet' page
+					Then for the "title", I should see "Pet App | Pet Sign up"
 					When I enter "Whitley" for "Name"
 					And I check the "Female" box
 					And I select "2007" for "pet_date_of_birth_1i"

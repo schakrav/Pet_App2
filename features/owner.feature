@@ -28,6 +28,7 @@ Feature: Owner information
 
 				Scenario: Create Owner
 					Given I am on the 'New Owner' page
+					Then for the "title", I should see "Pet App | Register Owner"
 					When I enter "Srinjoy" for "Firstname"
 					And I enter "Chakravarty" for "Lastname"
 					And I enter "chaxz93@gmail.com" for "Email"

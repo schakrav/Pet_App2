@@ -16,6 +16,7 @@ Feature: Animal information
 
 				Scenario: Create Animal
 					Given that I am on the 'New Animal' page
+					Then for the "title", I should see "Pet App | Register Breed"
 					When I enter "Pug" for "Name"
 					And I click the "Create Animal" button
 					Then I should get to see "Animal was successfully created!"

@@ -20,6 +20,7 @@ Feature: Vaccination information
 			
 				Scenario: Create Vaccinations
 					Given that I am on the 'New Vaccination' page
+					Then for the "title", I should see "Pet App | Register Vaccination"
 					And I enter "1" for "Vaccine"
 					And I enter "1" for "Visit"
 					And I enter "50 ml." for "Dosage"

@@ -26,7 +26,7 @@ class OwnersController < ApplicationController
   # GET /owners/new
   # GET /owners/new.json
   def new
-    @title = "Sign up"
+    @title = "Register Owner"
     @owner = Owner.new
 
     respond_to do |format|

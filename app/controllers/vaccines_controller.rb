@@ -25,7 +25,7 @@ class VaccinesController < ApplicationController
   # GET /vaccines/new
   # GET /vaccines/new.json
   def new
-    @title = "Administer Vaccine"
+    @title = "Register Vaccine"
     @vaccine = Vaccine.new
 
     respond_to do |format|

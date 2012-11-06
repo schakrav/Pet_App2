@@ -9,12 +9,20 @@ Feature: Standard Business
 			Then I should see "Welcome to our homepage!"
 			And I should see "Joy Veterinary Services will get ur lil one up & running ;)"
 			And I should see a button named "Sign up now!"
-			And I should see a button named "Sign in"
+			And I should see a button named "Log in"
+			And the "title" of the page should be "Home"
 			
 		Scenario: Functionality of Sign-up button
 			Given I am on the home page
 			When I click on the button named "Sign up now!"
-			Then I should navigate to the "Sign up" page
+			Then I should navigate to the "Sign Up" page
+			And the "title" of the page should be "Sign up"
+
+		Scenario: Functionality of Log In button
+			Given I am on the home page
+			When I click on the button named "Log In"
+			Then I should navigate to the "Log in" page
+			And the "title" of the page should be "Log in"	
 					
 
 		Scenario: Aboutpage

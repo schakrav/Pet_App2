@@ -57,11 +57,6 @@ describe VaccinationsController do
         :duration => 366,
         :animal_id => animal.id)
 
-# vaccination = Vaccination.create(
- #       :dosage => "100 ml.",
-  #      :vaccine_id => vaccine.id,
-   #     :visit_id => visit.id)
-
   {:visit_id => visit.id, :vaccine_id => vaccine.id}
     {:dosage => "100 ml.", :vaccine_id => 1, :visit_id => 1}
   end

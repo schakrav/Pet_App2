@@ -20,6 +20,7 @@ Feature: Vaccine information
 				
 				Scenario: Create Vaccine
 					Given that I am on the 'New Vaccine' page
+					Then for the "title", I should see "Pet App | Register Vaccine"
 					And I enter "Rabies" for "Name"
 					And I enter "1" for "Animal"
 					And I enter "250" for "Duration"
