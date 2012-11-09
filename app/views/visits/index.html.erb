@@ -14,7 +14,7 @@
 
 <% @visits.each do |visit| %>
   <tr>
-    <td><%= visit.pet_id %></td>
+    <td><%= visit.pet.name %></td>
     <td><%= visit.visit_date %></td>
     <td><%= visit.weight %></td>
     <td><%= visit.notes %></td>

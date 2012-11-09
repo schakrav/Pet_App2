@@ -13,11 +13,13 @@
 
   <div class="field">
     <%= f.label :vaccine_id %><br />
-    <%= f.number_field :vaccine_id %>
+    <%= collection_select(:vaccination, :vaccine_id, Vaccine.all, :id, :name) %>
+
   </div>
   <div class="field">
     <%= f.label :visit_id %><br />
-    <%= f.number_field :visit_id %>
+    <%= collection_select(:vaccination, :visit_id, Visit.all, :id, :visit_date) %>
+
   </div>
   <div class="field">
     <%= f.label :dosage %><br />

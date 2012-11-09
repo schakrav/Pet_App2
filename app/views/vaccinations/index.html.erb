@@ -12,8 +12,8 @@
 
 <% @vaccinations.each do |vaccination| %>
   <tr>
-    <td><%= vaccination.vaccine_id %></td>
-    <td><%= vaccination.visit_id %></td>
+    <td><%= vaccination.vaccine.name %></td>
+    <td><%= vaccination.visit.visit_date %></td>
     <td><%= vaccination.dosage %></td>
     <td><%= link_to 'Show', vaccination %></td>
     <td><%= link_to 'Edit', edit_vaccination_path(vaccination) %></td>

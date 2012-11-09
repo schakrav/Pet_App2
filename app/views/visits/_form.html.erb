@@ -13,7 +13,7 @@
   
   <div class="field">
     <%= f.label :pet_id %><br />
-    <%= f.number_field :pet_id %>
+    <%= collection_select(:visit, :pet_id, Pet.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :visit_date %><br />
